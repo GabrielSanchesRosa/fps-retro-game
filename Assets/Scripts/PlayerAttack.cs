@@ -1,8 +1,10 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
     [SerializeField] private Camera gameCam;
     [SerializeField] private GameObject impactEffect;
+    [SerializeField] private Animator gunAnimator;
 
     [SerializeField] private int maxAmmo;
     [SerializeField] private int ammo;
@@ -28,6 +30,8 @@ public class PlayerAttack : MonoBehaviour {
                 } else {
                     Debug.Log("I'm lookin at nothing.");
                 }
+
+                gunAnimator.SetTrigger("ShootingGun");
 
                 ammo--;
             } else {

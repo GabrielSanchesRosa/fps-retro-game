@@ -655,6 +655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameCam: {fileID: 519420031}
   impactEffect: {fileID: 673230427577800074, guid: 6471d4489403e4049b7b4cc8ede33c0a, type: 3}
+  gunAnimator: {fileID: 1775844618}
   maxAmmo: 0
   ammo: 100
 --- !u!1 &925053759
