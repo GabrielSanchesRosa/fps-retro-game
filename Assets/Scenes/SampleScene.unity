@@ -751,6 +751,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oRigidbody2D: {fileID: 816303847}
+  GunPanelAnimator: {fileID: 925053763}
   playerSpeed: 5
   mouseSensitivity: 10
 --- !u!50 &816303847
