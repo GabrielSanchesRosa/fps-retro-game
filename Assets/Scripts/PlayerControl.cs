@@ -21,6 +21,10 @@ public class PlayerControl : MonoBehaviour {
     }
 
     void Update() {
+        
+    }
+
+    void FixedUpdate() {
         MovePlayer();
         MoveCam();
     }

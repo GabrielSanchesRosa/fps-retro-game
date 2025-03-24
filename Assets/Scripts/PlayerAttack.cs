@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour {
     [SerializeField] private Camera gameCam;
+    [SerializeField] private GameObject impactEffect;
+
     [SerializeField] private int maxAmmo;
     [SerializeField] private int ammo;
 
@@ -21,6 +23,7 @@ public class PlayerAttack : MonoBehaviour {
                 RaycastHit  raycastHit;
 
                 if (Physics.Raycast(ray, out raycastHit)) {
+                    Instantiate(impactEffect, raycastHit.point, raycastHit.transform.rotation);
                     Debug.Log("I'm lookin at: " + raycastHit.transform.name);
                 } else {
                     Debug.Log("I'm lookin at nothing.");
