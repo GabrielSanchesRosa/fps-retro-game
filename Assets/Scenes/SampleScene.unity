@@ -376,6 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   oRigidbody2D: {fileID: 816303847}
   playerSpeed: 5
+  mouseSensitivity: 1
 --- !u!50 &816303847
 Rigidbody2D:
   serializedVersion: 5
