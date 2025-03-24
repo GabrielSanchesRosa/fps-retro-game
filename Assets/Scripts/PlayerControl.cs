@@ -4,6 +4,7 @@ public class PlayerControl : MonoBehaviour {
     public static PlayerControl instance;
 
     [SerializeField] private Rigidbody2D oRigidbody2D;
+    [SerializeField] private Animator GunPanelAnimator;
 
     [SerializeField] private float playerSpeed;
     [SerializeField] private float mouseSensitivity;
@@ -36,6 +37,12 @@ public class PlayerControl : MonoBehaviour {
         Vector3 verticalMove   = transform.right * keyboardCommands.y;
 
         oRigidbody2D.linearVelocity = (horizontalMove + verticalMove) * playerSpeed;
+
+        if (oRigidbody2D.linearVelocity.magnitude == 0) {
+            GunPanelAnimator.Play("PlayerStopped");
+        } else {
+            GunPanelAnimator.Play("WalkingPlayer");
+        }
     }
 
     private void MoveCam() {
