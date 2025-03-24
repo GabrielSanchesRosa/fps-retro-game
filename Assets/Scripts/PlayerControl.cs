@@ -1,6 +1,8 @@
 using UnityEngine;
 
 public class PlayerControl : MonoBehaviour {
+    public static PlayerControl instance;
+
     [SerializeField] private Rigidbody2D oRigidbody2D;
 
     [SerializeField] private float playerSpeed;
@@ -8,6 +10,11 @@ public class PlayerControl : MonoBehaviour {
 
     private Vector2 keyboardCommands;
     private Vector2 mouseMovement;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Start() {
         
