@@ -1,10 +1,11 @@
-using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour {
     [SerializeField] private Camera gameCam;
     [SerializeField] private GameObject impactEffect;
     [SerializeField] private Animator gunAnimator;
+    [SerializeField] private Text ammoText;
 
     [SerializeField] private int maxAmmo;
     [SerializeField] private int ammo;
@@ -12,6 +13,8 @@ public class PlayerAttack : MonoBehaviour {
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible   = false;
+
+        UpdateAmmo(ammo);
     }
 
     void Update() {
@@ -32,11 +35,15 @@ public class PlayerAttack : MonoBehaviour {
                 }
 
                 gunAnimator.SetTrigger("ShootingGun");
-
                 ammo--;
+                UpdateAmmo(ammo);
             } else {
                 Debug.Log("No ammo.");
             }
         }
+    }
+
+    private void UpdateAmmo(int ammo) {
+        ammoText.text = "AMMO\n" + ammo;
     }
 }

@@ -433,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3921569, g: 0.427451, b: 0.4431373, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -847,6 +847,7 @@ MonoBehaviour:
   gameCam: {fileID: 519420031}
   impactEffect: {fileID: 673230427577800074, guid: 6471d4489403e4049b7b4cc8ede33c0a, type: 3}
   gunAnimator: {fileID: 1775844618}
+  ammoText: {fileID: 95549213}
   maxAmmo: 0
   ammo: 100
 --- !u!1 &925053759
