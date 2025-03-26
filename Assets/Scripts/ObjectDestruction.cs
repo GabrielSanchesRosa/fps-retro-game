@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public class ObjectDestruction : MonoBehaviour
-{
+public class ObjectDestruction : MonoBehaviour {
     [SerializeField] private float delay;
 
     void Start() {
