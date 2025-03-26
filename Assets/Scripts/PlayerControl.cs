@@ -12,17 +12,8 @@ public class PlayerControl : MonoBehaviour {
     private Vector2 keyboardCommands;
     private Vector2 mouseMovement;
 
-    void Awake()
-    {
+    void Awake() {
         instance = this;
-    }
-
-    void Start() {
-        
-    }
-
-    void Update() {
-        
     }
 
     void FixedUpdate() {
