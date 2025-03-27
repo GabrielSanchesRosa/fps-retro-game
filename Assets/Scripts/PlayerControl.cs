@@ -6,11 +6,9 @@ public class PlayerControl : MonoBehaviour {
     [SerializeField] private Rigidbody2D oRigidbody2D;
     [SerializeField] private Animator GunPanelAnimator;
 
-    [SerializeField] private float playerSpeed;
-    [SerializeField] private float mouseSensitivity;
+    [SerializeField] private float playerSpeed, mouseSensitivity;
 
-    private Vector2 keyboardCommands;
-    private Vector2 mouseMovement;
+    private Vector2 keyboardCommands, mouseMovement;
 
     void Awake() {
         instance = this;

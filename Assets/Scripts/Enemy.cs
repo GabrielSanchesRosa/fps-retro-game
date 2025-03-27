@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Jobs;
 
 public class Enemy : MonoBehaviour {
     [SerializeField] private Transform[] walkingPoints;
@@ -7,16 +6,13 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] private GameObject enemyProjectile;
 
-    [SerializeField] private float enemySpeed;
-    [SerializeField] private float actualTime;
-    [SerializeField] private float distanceToAttack;
-    [SerializeField] private float timeBetweenAttacks;
+    [SerializeField] private float enemySpeed, distanceToAttack, timeBetweenAttacks;
 
-    [SerializeField] private int actualPoint;
+    private float actualTime;
 
-    [SerializeField] private bool enemyAlive;
-    [SerializeField] private bool enemyCanWalk;
-    [SerializeField] private bool enemyHasAttacked;
+    private int actualPoint;
+
+    private bool enemyAlive, enemyCanWalk, enemyHasAttacked;
 
     void Start() {
         enemyAlive       = true;

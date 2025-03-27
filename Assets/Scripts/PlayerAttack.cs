@@ -7,8 +7,7 @@ public class PlayerAttack : MonoBehaviour {
     [SerializeField] private Animator gunAnimator;
     [SerializeField] private Text ammoText;
 
-    [SerializeField] private int maxAmmo;
-    [SerializeField] private int ammo;
+    [SerializeField] private int maxAmmo, ammo;
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
