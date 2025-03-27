@@ -1,26 +1,34 @@
 using UnityEngine;
+using UnityEngine.Jobs;
 
 public class Enemy : MonoBehaviour {
     [SerializeField] private Transform[] walkingPoints;
+    [SerializeField] private Transform shootLocation;
+
+    [SerializeField] private GameObject enemyProjectile;
 
     [SerializeField] private float enemySpeed;
+    [SerializeField] private float actualTime;
+    [SerializeField] private float distanceToAttack;
+    [SerializeField] private float timeBetweenAttacks;
 
     [SerializeField] private int actualPoint;
 
     [SerializeField] private bool enemyAlive;
     [SerializeField] private bool enemyCanWalk;
-
-    [SerializeField] private float actualTime;
+    [SerializeField] private bool enemyHasAttacked;
 
     void Start() {
-        enemyAlive   = true;
-        enemyCanWalk = true;
+        enemyAlive       = true;
+        enemyCanWalk     = true;
+        enemyHasAttacked = false;
 
         transform.position = walkingPoints[0].position;
     }
 
     void Update() {
         MoveEnemy();
+        VerifyDistance();
     }
 
     private void MoveEnemy() {
@@ -40,14 +48,35 @@ public class Enemy : MonoBehaviour {
     }
 
     private void WaitBeforeWalk(float timeBetweenPoints) {
-        // enemyCanWalk = false;
-
         actualTime -= Time.deltaTime;
 
         if (actualTime <= 0) {
             enemyCanWalk = true;
+            actualTime   = timeBetweenPoints;
             actualPoint++;
-            actualTime = timeBetweenPoints;
         }
+    }
+
+    private void VerifyDistance() {
+        if (Vector3.Distance(transform.position, PlayerControl.instance.transform.position) <= distanceToAttack) {
+            AttackPlayer();
+        } else {
+            enemyCanWalk = true;
+        }
+    }
+
+    private void AttackPlayer() { 
+        if (!enemyHasAttacked) {
+            enemyCanWalk = false;
+
+            Instantiate(enemyProjectile, shootLocation.position, shootLocation.rotation);
+            enemyHasAttacked = true;
+
+            Invoke(nameof(ResetEnemyAttack), timeBetweenAttacks);
+        }
+    }
+
+    private void ResetEnemyAttack() {
+        enemyHasAttacked = false;
     }
 }
