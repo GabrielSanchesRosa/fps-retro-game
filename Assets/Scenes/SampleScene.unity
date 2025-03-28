@@ -1248,6 +1248,7 @@ MonoBehaviour:
   - {fileID: 959080445}
   shootLocation: {fileID: 1613463822}
   enemyProjectile: {fileID: 3291661606340972458, guid: 7facc3fae78f7614f846ba09139c05cb, type: 3}
+  oAnimator: {fileID: 1351036904}
   enemySpeed: 3
   distanceToAttack: 5
   timeBetweenAttacks: 1

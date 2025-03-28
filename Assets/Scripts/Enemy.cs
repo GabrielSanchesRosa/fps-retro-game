@@ -1,12 +1,12 @@
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
-    public static GameObject enemy;
-
     [SerializeField] private Transform[] walkingPoints;
     [SerializeField] private Transform shootLocation;
 
     [SerializeField] private GameObject enemyProjectile;
+
+    [SerializeField] private Animator oAnimator;
 
     [SerializeField] private float enemySpeed, distanceToAttack, timeBetweenAttacks;
 
@@ -38,7 +38,12 @@ public class Enemy : MonoBehaviour {
             if (enemyCanWalk) {
                 transform.position = Vector2.MoveTowards(transform.position, walkingPoints[actualPoint].position, enemySpeed * Time.deltaTime);
 
-                if (transform.position.y == walkingPoints[actualPoint].position.y) {
+                if (transform.position != walkingPoints[actualPoint].position) {
+                    oAnimator.SetTrigger("Walking");
+                }
+
+                if (transform.position == walkingPoints[actualPoint].position) {
+                    oAnimator.SetTrigger("Stopped");
                     WaitBeforeWalk(1.5f);
                 }
 
@@ -71,6 +76,7 @@ public class Enemy : MonoBehaviour {
         if (!enemyHasAttacked) {
             enemyCanWalk = false;
 
+            oAnimator.SetTrigger("Attacking");
             Instantiate(enemyProjectile, shootLocation.position, shootLocation.rotation);
             enemyHasAttacked = true;
 
@@ -85,12 +91,13 @@ public class Enemy : MonoBehaviour {
     public void HitEnemy(int damage) {
         if (enemyIsAlive) {
             enemyLife -= damage;
+            oAnimator.SetTrigger("Damage");
 
             if (enemyLife <= 0) {
                 enemyIsAlive = false;
                 enemyCanWalk = false;
 
-                DefeatEnemy();
+                oAnimator.SetTrigger("Defeated");
             }
         }
     }
