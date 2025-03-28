@@ -1101,8 +1101,8 @@ GameObject:
   - component: {fileID: 1351036901}
   - component: {fileID: 1351036903}
   m_Layer: 0
-  m_Name: Inimigo
-  m_TagString: Untagged
+  m_Name: Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1247,13 +1247,10 @@ MonoBehaviour:
   shootLocation: {fileID: 1613463822}
   enemyProjectile: {fileID: 3291661606340972458, guid: 7facc3fae78f7614f846ba09139c05cb, type: 3}
   enemySpeed: 3
-  actualTime: 0
   distanceToAttack: 5
   timeBetweenAttacks: 1
-  actualPoint: 0
-  enemyAlive: 0
-  enemyCanWalk: 0
-  enemyHasAttacked: 0
+  maxEnemyLife: 0
+  enemyLife: 0
 --- !u!1 &1389135590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1266,7 +1263,7 @@ GameObject:
   - component: {fileID: 1389135592}
   m_Layer: 0
   m_Name: 3D Collider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

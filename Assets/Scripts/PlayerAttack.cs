@@ -7,7 +7,7 @@ public class PlayerAttack : MonoBehaviour {
     [SerializeField] private Animator gunAnimator;
     [SerializeField] private Text ammoText;
 
-    [SerializeField] private int maxAmmo, ammo;
+    [SerializeField] private int maxAmmo, ammo, weaponDamage;
 
     void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -29,6 +29,10 @@ public class PlayerAttack : MonoBehaviour {
                 if (Physics.Raycast(ray, out raycastHit)) {
                     Instantiate(impactEffect, raycastHit.point, raycastHit.transform.rotation);
                     Debug.Log("I'm lookin at: " + raycastHit.transform.name);
+
+                    if (raycastHit.transform.gameObject.CompareTag("Enemy")) {
+                        raycastHit.transform.gameObject.GetComponentInParent<Enemy>().HitEnemy(weaponDamage);
+                    }
                 } else {
                     Debug.Log("I'm lookin at nothing.");
                 }

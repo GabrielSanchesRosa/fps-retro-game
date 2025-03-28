@@ -1,6 +1,8 @@
 using UnityEngine;
 
 public class Enemy : MonoBehaviour {
+    public static GameObject enemy;
+
     [SerializeField] private Transform[] walkingPoints;
     [SerializeField] private Transform shootLocation;
 
@@ -8,16 +10,20 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] private float enemySpeed, distanceToAttack, timeBetweenAttacks;
 
+    [SerializeField] private int maxEnemyLife, enemyLife;
+
     private float actualTime;
 
     private int actualPoint;
 
-    private bool enemyAlive, enemyCanWalk, enemyHasAttacked;
+    private bool enemyIsAlive, enemyCanWalk, enemyHasAttacked;
 
     void Start() {
-        enemyAlive       = true;
+        enemyIsAlive     = true;
         enemyCanWalk     = true;
         enemyHasAttacked = false;
+
+        enemyLife = maxEnemyLife;
 
         transform.position = walkingPoints[0].position;
     }
@@ -28,7 +34,7 @@ public class Enemy : MonoBehaviour {
     }
 
     private void MoveEnemy() {
-        if (enemyAlive) {
+        if (enemyIsAlive) {
             if (enemyCanWalk) {
                 transform.position = Vector2.MoveTowards(transform.position, walkingPoints[actualPoint].position, enemySpeed * Time.deltaTime);
 
@@ -74,5 +80,22 @@ public class Enemy : MonoBehaviour {
 
     private void ResetEnemyAttack() {
         enemyHasAttacked = false;
+    }
+
+    public void HitEnemy(int damage) {
+        if (enemyIsAlive) {
+            enemyLife -= damage;
+
+            if (enemyLife <= 0) {
+                enemyIsAlive = false;
+                enemyCanWalk = false;
+
+                DefeatEnemy();
+            }
+        }
+    }
+
+    public void DefeatEnemy() {
+        Destroy(this.gameObject);
     }
 }
