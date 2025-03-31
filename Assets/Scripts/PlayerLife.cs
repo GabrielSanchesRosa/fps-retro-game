@@ -29,4 +29,14 @@ public class PlayerLife : MonoBehaviour {
     private void UpdateLife(int life) {
         lifeText.text = "LIFE\n" + life;
     }
+
+    public void AddLife(int collectedLife) {
+        if (collectedLife + life < maxLife) {
+            life += collectedLife;
+        } else {
+            life = maxLife;
+        }
+
+        UpdateLife(life);
+    }
 }

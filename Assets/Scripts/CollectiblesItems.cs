@@ -12,7 +12,7 @@ public class CollectiblesItems : MonoBehaviour {
             };
 
             if (lifeItem) {
-
+                other.gameObject.GetComponent<PlayerLife>().AddLife(lifeQuantity);
             };
 
             if (silverKey) {
