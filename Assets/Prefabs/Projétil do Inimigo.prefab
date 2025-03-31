@@ -153,6 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileSpeed: 7
+  projectileDamage: 1
 --- !u!114 &5443846387643661721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +167,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 4
+  hasAnimator: 0
