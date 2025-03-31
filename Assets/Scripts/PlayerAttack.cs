@@ -46,7 +46,17 @@ public class PlayerAttack : MonoBehaviour {
         }
     }
 
-    private void UpdateAmmo(int ammo) {
-        ammoText.text = "AMMO\n" + ammo;
+    private void UpdateAmmo(int newAmmo) {
+        ammoText.text = "AMMO\n" + newAmmo;
+    }
+
+    public void AddAmmo(int collectedAmmo) {
+        if (collectedAmmo + ammo < maxAmmo) {
+            ammo += collectedAmmo;
+        } else {
+            ammo = maxAmmo;
+        }
+
+        UpdateAmmo(ammo);
     }
 }

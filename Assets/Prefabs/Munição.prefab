@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2027476153297653095}
   - component: {fileID: 8499091513599597098}
   - component: {fileID: 1285214526170632805}
+  - component: {fileID: 8089224537917071831}
   m_Layer: 0
   m_Name: "Muni\xE7\xE3o"
   m_TagString: Untagged
@@ -137,3 +138,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae277ef72ab9c44faab2fc5753d8527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8089224537917071831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4510550784090472939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8780f907c196199459fdfbc253e2b8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoItem: 1
+  lifeItem: 0
+  silverKey: 0
+  goldKey: 0
+  ammoQuantity: 25
+  lifeQuantity: 0

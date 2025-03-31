@@ -896,7 +896,7 @@ MonoBehaviour:
   impactEffect: {fileID: 673230427577800074, guid: 6471d4489403e4049b7b4cc8ede33c0a, type: 3}
   gunAnimator: {fileID: 1775844618}
   ammoText: {fileID: 95549213}
-  maxAmmo: 0
+  maxAmmo: 100
   ammo: 100
   weaponDamage: 1
 --- !u!114 &816303851

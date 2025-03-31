@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7275888988307371592}
   - component: {fileID: 65958715131709200}
   - component: {fileID: 3756926237810173624}
+  - component: {fileID: 2887796522416783241}
   m_Layer: 0
   m_Name: Chave Dourada
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 3774866996431857883}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.443, y: -0.005, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,3 +138,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae277ef72ab9c44faab2fc5753d8527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2887796522416783241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3774866996431857883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8780f907c196199459fdfbc253e2b8bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoItem: 0
+  lifeItem: 0
+  silverKey: 0
+  goldKey: 1
+  ammoQuantity: 0
+  lifeQuantity: 0
