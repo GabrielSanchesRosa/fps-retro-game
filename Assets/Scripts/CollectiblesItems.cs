@@ -16,11 +16,11 @@ public class CollectiblesItems : MonoBehaviour {
             };
 
             if (silverKey) {
-
+                GameManager.instance.haveSilverKey = true;
             };
 
             if (goldKey) {
-
+                GameManager.instance.haveGoldenKey = true;
             };
 
             Destroy(this.gameObject);
