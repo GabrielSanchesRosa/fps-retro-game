@@ -6,33 +6,46 @@ public class Enemy : MonoBehaviour {
 
     [SerializeField] private GameObject enemyProjectile;
 
+    [SerializeField] private Animator oAnimator;
+
     [SerializeField] private float enemySpeed, distanceToAttack, timeBetweenAttacks;
+
+    [SerializeField] private int maxEnemyLife, enemyLife;
 
     private float actualTime;
 
     private int actualPoint;
 
-    private bool enemyAlive, enemyCanWalk, enemyHasAttacked;
+    private bool enemyIsAlive, enemyCanWalk, enemyHasAttacked;
 
     void Start() {
-        enemyAlive       = true;
+        enemyIsAlive     = true;
         enemyCanWalk     = true;
         enemyHasAttacked = false;
+
+        enemyLife = maxEnemyLife;
 
         transform.position = walkingPoints[0].position;
     }
 
     void Update() {
-        MoveEnemy();
-        VerifyDistance();
+        if (GameManager.instance.playerAlive) {
+            MoveEnemy();
+            VerifyDistance();
+        }
     }
 
     private void MoveEnemy() {
-        if (enemyAlive) {
+        if (enemyIsAlive) {
             if (enemyCanWalk) {
                 transform.position = Vector2.MoveTowards(transform.position, walkingPoints[actualPoint].position, enemySpeed * Time.deltaTime);
 
-                if (transform.position.y == walkingPoints[actualPoint].position.y) {
+                if (transform.position != walkingPoints[actualPoint].position) {
+                    oAnimator.SetTrigger("Walking");
+                }
+
+                if (transform.position == walkingPoints[actualPoint].position) {
+                    oAnimator.SetTrigger("Stopped");
                     WaitBeforeWalk(1.5f);
                 }
 
@@ -65,6 +78,7 @@ public class Enemy : MonoBehaviour {
         if (!enemyHasAttacked) {
             enemyCanWalk = false;
 
+            oAnimator.SetTrigger("Attacking");
             Instantiate(enemyProjectile, shootLocation.position, shootLocation.rotation);
             enemyHasAttacked = true;
 
@@ -74,5 +88,23 @@ public class Enemy : MonoBehaviour {
 
     private void ResetEnemyAttack() {
         enemyHasAttacked = false;
+    }
+
+    public void HitEnemy(int damage) {
+        if (enemyIsAlive) {
+            enemyLife -= damage;
+            oAnimator.SetTrigger("Damage");
+
+            if (enemyLife <= 0) {
+                enemyIsAlive = false;
+                enemyCanWalk = false;
+
+                oAnimator.SetTrigger("Defeated");
+            }
+        }
+    }
+
+    public void DefeatEnemy() {
+        Destroy(this.gameObject);
     }
 }
