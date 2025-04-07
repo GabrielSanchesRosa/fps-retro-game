@@ -79,6 +79,7 @@ public class Enemy : MonoBehaviour {
             enemyCanWalk = false;
 
             oAnimator.SetTrigger("Attacking");
+            SoundEffects.instance.PlaySoundEffects("enemyAttack");
             Instantiate(enemyProjectile, shootLocation.position, shootLocation.rotation);
             enemyHasAttacked = true;
 
@@ -93,12 +94,14 @@ public class Enemy : MonoBehaviour {
     public void HitEnemy(int damage) {
         if (enemyIsAlive) {
             enemyLife -= damage;
+            SoundEffects.instance.PlaySoundEffects("enemyDamage");
             oAnimator.SetTrigger("Damage");
 
             if (enemyLife <= 0) {
                 enemyIsAlive = false;
                 enemyCanWalk = false;
 
+                SoundEffects.instance.PlaySoundEffects("enemyDefeated");
                 oAnimator.SetTrigger("Defeated");
             }
         }

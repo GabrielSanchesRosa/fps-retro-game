@@ -18,6 +18,7 @@ public class PlayerLife : MonoBehaviour {
     public void HitPlayer(int damage) {
         if (GameManager.instance.playerAlive) {
             life -= damage;
+            SoundEffects.instance.PlaySoundEffects("playerDamage");
             UpdateLife(life);
 
             if (life <= 0) {
