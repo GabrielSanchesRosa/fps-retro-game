@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3774866996431857883
+--- !u!1 &4510550784090472939
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,25 +8,25 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8581417245712463282}
-  - component: {fileID: 7275888988307371592}
-  - component: {fileID: 65958715131709200}
-  - component: {fileID: 3756926237810173624}
-  - component: {fileID: 2887796522416783241}
+  - component: {fileID: 4364364685673299139}
+  - component: {fileID: 2027476153297653095}
+  - component: {fileID: 8499091513599597098}
+  - component: {fileID: 1285214526170632805}
+  - component: {fileID: 8089224537917071831}
   m_Layer: 0
-  m_Name: Chave Dourada
+  m_Name: "Muni\xE7\xE3o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8581417245712463282
+--- !u!4 &4364364685673299139
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774866996431857883}
+  m_GameObject: {fileID: 4510550784090472939}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -35,13 +35,13 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7275888988307371592
+--- !u!212 &2027476153297653095
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774866996431857883}
+  m_GameObject: {fileID: 4510550784090472939}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -58,7 +58,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -78,25 +78,25 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0fad577840418264ea22964b1af11e0e, type: 3}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: aa21f8372528c004db0330bd85db152a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.18, y: 0.27}
+  m_Size: {x: 0.39, y: 0.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &65958715131709200
+--- !u!58 &8499091513599597098
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774866996431857883}
+  m_GameObject: {fileID: 4510550784090472939}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -125,34 +125,34 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.17635445
---- !u!114 &3756926237810173624
+  m_Radius: 0.23300472
+--- !u!114 &1285214526170632805
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774866996431857883}
+  m_GameObject: {fileID: 4510550784090472939}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ae277ef72ab9c44faab2fc5753d8527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2887796522416783241
+--- !u!114 &8089224537917071831
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3774866996431857883}
+  m_GameObject: {fileID: 4510550784090472939}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8780f907c196199459fdfbc253e2b8bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoItem: 0
+  ammoItem: 1
   lifeItem: 0
   silverKey: 0
-  goldKey: 1
-  ammoQuantity: 0
+  goldKey: 0
+  ammoQuantity: 25
   lifeQuantity: 0
