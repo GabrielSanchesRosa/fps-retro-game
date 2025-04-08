@@ -3425,6 +3425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fc339ce2fe6e474e88607d350a43880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausePanel: {fileID: 1983866742}
   playerAlive: 0
   haveSilverKey: 0
   haveGoldenKey: 0
@@ -24950,7 +24951,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1983866743
 RectTransform:
   m_ObjectHideFlags: 0
