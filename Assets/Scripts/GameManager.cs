@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour {
 
     public void GameOver() {
         playerAlive = false;
-
+        FindAnyObjectByType<Music>().PlayMusic("Game Over");
         Debug.Log("Game Over");
     }
 }

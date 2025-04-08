@@ -38,9 +38,11 @@ public class PlayerAttack : MonoBehaviour {
                 }
 
                 gunAnimator.SetTrigger("ShootingGun");
+                SoundEffects.instance.PlaySoundEffects("playerAttack");
                 ammo--;
                 UpdateAmmo(ammo);
             } else {
+                SoundEffects.instance.PlaySoundEffects("noAmmo");
                 Debug.Log("No ammo.");
             }
         }
