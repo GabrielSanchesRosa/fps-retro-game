@@ -3,7 +3,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
 
-    [SerializeField] GameObject pausePanel;
+    [SerializeField] GameObject pausePanel, gameOverPanel;
     [SerializeField] public bool playerAlive, haveSilverKey, haveGoldenKey;
 
     void Awake() {
@@ -41,6 +41,11 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GameOver() {
+        gameOverPanel.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible   = true;
+        Time.timeScale   = 0f;
+
         playerAlive = false;
         FindAnyObjectByType<Music>().PlayMusic("Game Over");
         Debug.Log("Game Over");
