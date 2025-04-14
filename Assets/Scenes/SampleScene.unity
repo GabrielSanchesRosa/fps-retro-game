@@ -27068,7 +27068,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bca3ac36635686e4baf3efcaa8b01133, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oAnimatorTransition: {fileID: 39820165}
   nextLevel: SampleScene
+  waitTime: 1.5
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
